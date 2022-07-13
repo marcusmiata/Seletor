@@ -5,6 +5,7 @@
 typedef struct suporte{
     char nome[20];
     char tipo[10];
+    int tier;
 } suporte;
 
 typedef struct atirador{
@@ -36,6 +37,22 @@ int main(){
     strcpy(todosSup[30].nome, "Leona");strcpy(todosSup[30].tipo, "engage");strcpy(todosSup[31].nome, "Alistar");strcpy(todosSup[31].tipo, "peel");
     strcpy(todosSup[32].nome, "Maokai");strcpy(todosSup[32].tipo, "peel");strcpy(todosSup[33].nome, "Amumu");strcpy(todosSup[33].tipo, "engage");
     strcpy(todosSup[34].nome, "Pantheon");strcpy(todosSup[34].tipo, "engage");strcpy(todosSup[35].nome, "Miss Fortune");strcpy(todosSup[35].tipo, "poke");
+
+    // ----- SETAR TIER DOS SUPORTES -----
+    int j;
+    for(j = 0; j<11 ;j++)
+        todosSup[j].tier = 1;
+    for(j; j< 18; j++)
+         todosSup[j].tier = 2;
+    for(j; j< 27; j++)
+         todosSup[j].tier = 3;
+    for(j; j< 34; j++)
+         todosSup[j].tier = 4;
+    for(j; j< 36; j++)
+         todosSup[j].tier = 5;
+
+    // ----- ATUALIZAR TIER DOS  SUPORTES -----
+
 
     todosAdc[25].sinergia[0] = todosSup[2];todosAdc[25].sinergia[1] = todosSup[9];todosAdc[25].sinergia[2] = todosSup[7];
     todosAdc[24].sinergia[0] = todosSup[5];todosAdc[24].sinergia[1] = todosSup[20];todosAdc[24].sinergia[2] = todosSup[14];
@@ -133,25 +150,25 @@ int main(){
         for(int i = 0; i < 36; i++){
             if(strcmp(tipoLido, "peel") == 0){
                 if(strcmp(todosSup[i].tipo, "poke") == 0){
-                    printf("%s\n", todosSup[i].nome);
+                    printf("Tier %d: %s\n", todosSup[i].tier, todosSup[i].nome);
                     flagRecomendado = 1;
                 }
             }
             if(strcmp(tipoLido, "poke") == 0){
                 if(strcmp(todosSup[i].tipo, "sustain") == 1){
-                    printf("%s\n", todosSup[i].nome);
+                    printf("Tier %d: %s\n", todosSup[i].tier, todosSup[i].nome);
                     flagRecomendado = 1;
                 }
             }
             if(strcmp(tipoLido, "sustain") == 0){
                 if(strcmp(todosSup[i].tipo, "engage") == 0){
-                    printf("%s\n", todosSup[i].nome);
+                    printf("Tier %d: %s\n", todosSup[i].tier, todosSup[i].nome);
                     flagRecomendado = 1;
                 }
             }
             if(strcmp(tipoLido, "engage") == 0){
                 if(strcmp(todosSup[i].tipo, "peel") == 0){
-                    printf("%s\n", todosSup[i].nome);
+                    printf("Tier %d: %s\n", todosSup[i].tier, todosSup[i].nome);
                     flagRecomendado = 1;
                 }
             }
@@ -159,7 +176,7 @@ int main(){
     }
     else if(flagAdc == 0 && flagTipo == 1){ // Adc lido, tipo nao lido
         for(int i = 0; i < 3; i++){
-            printf("%s\n", aliado.sinergia[i].nome);
+            printf("Tier %d: %s\n", aliado.sinergia[i].tier, aliado.sinergia[i].nome);
             flagRecomendado = 1;
         }
     }
@@ -167,22 +184,22 @@ int main(){
         for(int i = 0; i < 3; i++){
             if(strcmp(tipoLido, "peel") == 0)
                 if(strcmp(aliado.sinergia[i].tipo, "poke") == 0){
-                    printf("%s\n", aliado.sinergia[i].nome);
+                    printf("Tier %d: %s\n", aliado.sinergia[i].tier, aliado.sinergia[i].nome);
                     flagRecomendado = 1;
                 }
             if(strcmp(tipoLido, "poke") == 0)
                 if(strcmp(aliado.sinergia[i].tipo, "sustain") == 0){
-                    printf("%s\n", aliado.sinergia[i].nome);
+                    printf("Tier %d: %s\n", aliado.sinergia[i].tier, aliado.sinergia[i].nome);
                     flagRecomendado = 1;
                 }
             if(strcmp(tipoLido, "sustain") == 0)
                 if(strcmp(aliado.sinergia[i].tipo, "engage") == 0){
-                    printf("%s\n", aliado.sinergia[i].nome);
+                    printf("Tier %d: %s\n", aliado.sinergia[i].tier, aliado.sinergia[i].nome);
                     flagRecomendado = 1;
                 }
             if(strcmp(tipoLido, "engage") == 0)
                 if(strcmp(aliado.sinergia[i].tipo, "peel") == 0){
-                    printf("%s\n", aliado.sinergia[i].nome);
+                    printf("Tier %d: %s\n", aliado.sinergia[i].tier, aliado.sinergia[i].nome);
                     flagRecomendado = 1;
                 }
         }
@@ -190,25 +207,25 @@ int main(){
     }
     if((flagAdc == 1 && flagTipo == 1)){ // Ambos nao lidos
             for(int i = 0; i<5;i++)
-                printf("%s\n", main[i].nome);
+                printf("Tier %d: %s\n", main[i].tier, main[i].nome);
             flagRecomendado = 1;}
 
     if(flagRecomendado == 0 ){
         for(int i = 0; i<5; i++){
             if(strcmp(tipoLido, "peel") == 0 && strcmp(main[i].tipo, "poke") == 0){ 
-                printf("%s\n", main[i].nome);
+                printf("Tier %d: %s\n", main[i].tier, main[i].nome);
                 flagRecomendado = 1;
             }
             if(strcmp(tipoLido, "poke") == 0 && strcmp(main[i].tipo, "sustain") == 0){ 
-                printf("%s\n", main[i].nome);
+                printf("Tier %d: %s\n", main[i].tier, main[i].nome);
                 flagRecomendado = 1;
             }
             if(strcmp(tipoLido, "sustain") == 0 && strcmp(main[i].tipo, "engage") == 0){ 
-                printf("%s\n", main[i].nome);
+                printf("Tier %d: %s\n", main[i].tier, main[i].nome);
                 flagRecomendado = 1;
             }
             if(strcmp(tipoLido, "engage") == 0 && strcmp(main[i].tipo, "peel") == 0){ 
-                printf("%s\n", main[i].nome);
+                printf("Tier %d: %s\n", main[i].tier, main[i].nome);
                 flagRecomendado = 1;
             }   
         }
