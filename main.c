@@ -191,7 +191,7 @@ int main(){
     if((flagAdc == 1 && flagTipo == 1)){ // Ambos nao lidos
             for(int i = 0; i<5;i++)
                 printf("%s\n", main[i].nome);
-    }
+            flagRecomendado = 1;}
 
     if(flagRecomendado == 0 ){
         for(int i = 0; i<5; i++){
