@@ -214,7 +214,16 @@ int main(){
         }
 
     if(flagRecomendado == 0)
-        printf("Infelizmente nao tenho recomendacao para esta situacao");
+        printf("Infelizmente nao tenho um campeao para recomendar");
+        if(strcmp(tipoLido, "peel") == 0)
+            printf(", porem pegue algo de poke\n");
+        if(strcmp(tipoLido, "poke") == 0)
+            printf(", porem pegue algo de sustain\n");
+        if(strcmp(tipoLido, "sustain") == 0)
+            printf(", porem pegue algo de engage\n");
+        if(strcmp(tipoLido, "engage") == 0)
+            printf(", porem pegue algo de peel\n");
+        
 
     } // Nada foi recomendado
     // ----- FIM -----
