@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1657666914 source:c:\users\11811bcc017\documents\seletor-de-campeoes\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1657685120 source:c:\users\marcos vinicius\documents\seletor-de-campeoes\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
