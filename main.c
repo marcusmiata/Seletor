@@ -128,11 +128,16 @@ int main(){
         flagAdc = 1;
     else{
     // ----- BUSCA O ATIRADOR CORRESPONDENTE -----
-        for(int i = 0; i < 26; i++)
+        for(int i = 0; i < 26; i++){ 
             if(strcmp(nomeLido, todosAdc[i].nome) == 0){
                 aliado = todosAdc[i];
                 break;
             }
+            if(i == 26){
+                printf("Escreve direito seu bosta\n");
+                exit(1);
+            }
+        }
     // ----- FIM -----
     }
 
